@@ -7,11 +7,12 @@ public class Main {
   public static final Scanner scan = new Scanner(System.in);
 
   public static void main(String[] args) {
-    labExam();
+    labExam(); //main Application program
   }
 
   public static void labExam() {
 
+      //creates an object of Dynamic array
     DynamicArray array = new DynamicArray();
     while (true) {
       String choice = readString(
@@ -71,6 +72,12 @@ public class Main {
     }
 
   }
+
+    /**
+     * Prints the content of the array
+     * @param array The array to print
+     * @param size The array number of elements
+     */
 
   public static void printArray(int[] array, int size) {
     for (int i = 0; i < size; i++) {

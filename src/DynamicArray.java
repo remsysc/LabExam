@@ -17,7 +17,7 @@ public class DynamicArray {
     this.size = 0;
     this.array = new int[capacity];
   }
-
+  //necessary getters
   public int[] getArray() {
     return this.array;
   }
@@ -26,6 +26,10 @@ public class DynamicArray {
     return this.size;
   }
 
+  /**
+  * Method to resize the capacity of the array
+  * Twice the prev. capacity
+  */
   public void resize() {
     capacity *= 2;
     int[] newArray = new int[capacity];
@@ -36,6 +40,10 @@ public class DynamicArray {
     array = newArray;
   }
 
+  /**
+  * Method to add Element in the array
+  * @param value Value to be added in array
+   */
   public void addElement(int value) {
     if (size == capacity) {
       resize();
@@ -44,6 +52,7 @@ public class DynamicArray {
     size++;
   }
 
+ //Method to clear the contents of the array
   public void clear() {
 
     for (int i = 0; i < size; i++) {
@@ -52,6 +61,11 @@ public class DynamicArray {
     size = 0;
   }
 
+  /**
+  * Method to find the sum of the highest even
+  * and highest odd number of the array
+  * @return Sum of two number
+   */
   public int sum_of_highest_even_and_odd() {
     int max_even = Integer.MIN_VALUE;
     int max_odd = Integer.MIN_VALUE;
@@ -69,8 +83,11 @@ public class DynamicArray {
 
     return max_even + max_odd;
   }
-
-  public int[] findIndices(int value) {
+/**
+ * Method to find the indices of an Element
+ * @param value Target element to find its indices
+ */
+  public void findIndices(int value) {
 
     System.out.printf("Element %d found at Indices: ", value);
 
@@ -80,9 +97,13 @@ public class DynamicArray {
       }
     }
     System.out.println();
-    return array;
   }
 
+    /**
+     * Method to replace all occurrence of a target
+     * @param value Original value
+     * @param newValue new value to replace 'value'
+     */
   public void replaceAllMatch(int value, int newValue) {
 
     for (int i = 0; i < size; i++) {
@@ -92,7 +113,10 @@ public class DynamicArray {
     }
 
   }
-
+/**
+* Method to find the second-largest number of array
+ * @return Value of second-largest number
+* */
   public int findNumberBeforeMax() {
     int max = Integer.MIN_VALUE;
     int beforeMax = Integer.MIN_VALUE;
@@ -106,6 +130,11 @@ public class DynamicArray {
     }
     return beforeMax;
   }
+
+  /*
+  * Method to remove all duplicate elements
+  * in the array
+  * */
 
   public void removeDuplicates() {
 
